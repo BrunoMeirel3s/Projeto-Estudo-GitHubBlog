@@ -1,9 +1,12 @@
-import { ContainerHome } from "./styles";
+import { CardUsuario } from "./components/CardUsuario";
+import { ContainerHome, ContentHome } from "./styles";
 
 export function Home() {
   return (
     <ContainerHome>
-      <h1>Teste Inicial</h1>
+      <ContentHome>
+        <CardUsuario />
+      </ContentHome>
     </ContainerHome>
   );
 }
