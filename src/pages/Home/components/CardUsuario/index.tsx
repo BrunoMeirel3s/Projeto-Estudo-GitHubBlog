@@ -1,4 +1,8 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faBuilding, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import {
+  ContainerGithubInfos,
   ContainerUserInfos,
   ContainerUserPhoto,
   ConteinerCardUsuario,
@@ -18,6 +22,20 @@ export function CardUsuario() {
           assumenda molestias veniam esse optio mollitia sapiente nobis libero.
           Laborum, minus.
         </p>
+        <ContainerGithubInfos>
+          <div>
+            <FontAwesomeIcon icon={faGithub} style={{ color: "#3A536B" }} />
+            <span>brunomeirel3s</span>
+          </div>
+          <div>
+            <FontAwesomeIcon icon={faBuilding} style={{ color: "#3A536B" }} />
+            <span>Unimed Belém</span>
+          </div>
+          <div>
+            <FontAwesomeIcon icon={faUserGroup} style={{ color: "#3A536B" }} />
+            <span>2 seguidores</span>
+          </div>
+        </ContainerGithubInfos>
       </ContainerUserInfos>
     </ConteinerCardUsuario>
   );

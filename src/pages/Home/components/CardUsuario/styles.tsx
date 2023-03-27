@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 export const ConteinerCardUsuario = styled.div`
   width: 100%;
-  height: 13rem;
+  height: 13.5rem;
   background: ${(props) => props.theme["base-profile"]};
   border-radius: 10px;
   padding: 2rem;
   margin-top: -5.5rem;
-  filter: drop-shadow(0px 2px 28px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.2));
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 2rem;
 `;
 
@@ -24,4 +25,16 @@ export const ContainerUserInfos = styled.div`
   flex-direction: column;
   flex: 1;
   gap: 1rem;
+`;
+
+export const ContainerGithubInfos = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
 `;
