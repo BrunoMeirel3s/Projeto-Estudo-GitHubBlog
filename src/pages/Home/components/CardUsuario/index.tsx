@@ -1,11 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faBuilding, faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBuilding,
+  faUserGroup,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   ContainerGithubInfos,
   ContainerUserInfos,
   ContainerUserPhoto,
   ConteinerCardUsuario,
+  GithubLink,
 } from "./styles";
 
 export function CardUsuario() {
@@ -37,6 +42,16 @@ export function CardUsuario() {
           </div>
         </ContainerGithubInfos>
       </ContainerUserInfos>
+      <GithubLink>
+        <a href="https://github.com/brunomeirel3s" target="_blank">
+          <span>GITHUB</span>
+          <FontAwesomeIcon
+            icon={faArrowUpRightFromSquare}
+            style={{ color: "#3294F8" }}
+            width={14}
+          ></FontAwesomeIcon>
+        </a>
+      </GithubLink>
     </ConteinerCardUsuario>
   );
 }

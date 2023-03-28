@@ -38,3 +38,23 @@ export const ContainerGithubInfos = styled.div`
     gap: 0.5rem;
   }
 `;
+
+export const GithubLink = styled.div`
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme["blue"]};
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a:hover {
+    border-bottom: 1px solid ${(props) => props.theme["blue"]};
+  }
+`;
