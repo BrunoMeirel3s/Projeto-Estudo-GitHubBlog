@@ -1,6 +1,7 @@
+import { CardPublicacao } from "./components/CardPublicacao";
 import { CardUsuario } from "./components/CardUsuario";
 import { SearchContentInput } from "./components/SearchContentInput";
-import { ContainerHome, ContentHome } from "./styles";
+import { ContainerHome, ContainerPublicacoes, ContentHome } from "./styles";
 
 export function Home() {
   return (
@@ -8,6 +9,14 @@ export function Home() {
       <ContentHome>
         <CardUsuario />
         <SearchContentInput />
+        <ContainerPublicacoes>
+          <CardPublicacao />
+          <CardPublicacao />
+          <CardPublicacao />
+          <CardPublicacao />
+          <CardPublicacao />
+          <CardPublicacao />
+        </ContainerPublicacoes>
       </ContentHome>
     </ContainerHome>
   );
