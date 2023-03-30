@@ -3,7 +3,7 @@ import { ContainerCardPublicacao, Content, Header } from "./styles";
 export function CardPublicacao() {
   return (
     <ContainerCardPublicacao>
-      <a href="/post">
+      <a href="https://www.google.com" target="_blank">
         <Header>
           <div>
             <h3>Javascrip data types and data structures</h3>
