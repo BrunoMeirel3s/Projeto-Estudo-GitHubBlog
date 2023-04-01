@@ -20,4 +20,5 @@ Projeto desenvolvido como microblog, listando e exibindo issues do projeto em fo
   <img src="https://github.com/BrunoMeirel3s/Projeto-Estudo-GitHubBlog/blob/main/screenshots/screen1.png" width="600px"  height="auto"></img>
   <img src="https://github.com/BrunoMeirel3s/Projeto-Estudo-GitHubBlog/blob/main/screenshots/screen2.png" width="600px"  height="auto"></img>
   <img src="https://github.com/BrunoMeirel3s/Projeto-Estudo-GitHubBlog/blob/main/screenshots/screen3.png" width="600px"  height="auto"></img>
+  <img src="https://github.com/BrunoMeirel3s/Projeto-Estudo-GitHubBlog/blob/main/screenshots/screen4.png" width="600px"  height="auto"></img>
 </div>
