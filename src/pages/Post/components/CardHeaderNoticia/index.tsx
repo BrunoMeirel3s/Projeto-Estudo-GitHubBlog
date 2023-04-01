@@ -15,8 +15,34 @@ import {
   ContainerUserInfos,
   ConteinerHeaderNoticia,
 } from "./styles";
+import { parseISO, formatDistance, isDate, isValid } from "date-fns";
+import ptBr from "date-fns/locale/pt-BR";
 
-export function CardHeaderNoticia() {
+interface CardHeaderNoticiaProps {
+  created_at: string;
+  html_url: string;
+  title: string;
+  comments: number;
+  login: string;
+}
+
+export function CardHeaderNoticia({
+  created_at = new Date().toDateString(),
+  html_url,
+  title,
+  comments,
+  login,
+}: CardHeaderNoticiaProps) {
+  const firstDate = parseISO(created_at);
+  console.log(firstDate);
+  let distance;
+
+  if (isValid(firstDate)) {
+    distance = formatDistance(firstDate, new Date(), {
+      locale: ptBr,
+    });
+  }
+
   return (
     <ConteinerHeaderNoticia>
       <ContainerLinks>
@@ -31,7 +57,7 @@ export function CardHeaderNoticia() {
           </a>
         </div>
         <div>
-          <a href="https://github.com/brunomeirel3s" target="_blank">
+          <a href={html_url} target="_blank">
             <span>VER NO GITHUB</span>
             <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}
@@ -44,21 +70,21 @@ export function CardHeaderNoticia() {
       <ContainerUserInfos>
         <h1>
           {" "}
-          <p>Javascript data types and data structures</p>
+          <p>{title}</p>
         </h1>
       </ContainerUserInfos>
       <ContainerGithubInfos>
         <div>
           <FontAwesomeIcon icon={faGithub} style={{ color: "#3A536B" }} />
-          <span>brunomeirel3s</span>
+          <span>{login}</span>
         </div>
         <div>
           <FontAwesomeIcon icon={faCalendarDay} style={{ color: "#3A536B" }} />
-          <span>Há 1 dia</span>
+          <span>Há {distance}</span>
         </div>
         <div>
           <FontAwesomeIcon icon={faComment} style={{ color: "#3A536B" }} />
-          <span>5 comentários</span>
+          <span>{comments} comentários</span>
         </div>
       </ContainerGithubInfos>
     </ConteinerHeaderNoticia>

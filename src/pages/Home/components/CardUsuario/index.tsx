@@ -13,37 +13,50 @@ import {
   GithubLink,
 } from "./styles";
 
-export function CardUsuario() {
+interface CardUsuarioProps {
+  login: string;
+  html_url: string;
+  name: string;
+  company: string;
+  bio: string;
+  followers: number;
+  avatar_url: string;
+}
+
+export function CardUsuario({
+  login,
+  html_url,
+  name,
+  company,
+  bio,
+  followers,
+  avatar_url,
+}: CardUsuarioProps) {
   return (
     <ConteinerCardUsuario>
       <ContainerUserPhoto>
-        <img src="https://github.com/brunoMeirel3s.png" alt="" width={148} />
+        <img src={avatar_url} alt="" width={148} />
       </ContainerUserPhoto>
       <ContainerUserInfos>
-        <h1>Bruno Meireles</h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati
-          consectetur totam nostrum iste voluptas ut sunt minima nihil, error
-          assumenda molestias veniam esse optio mollitia sapiente nobis libero.
-          Laborum, minus.
-        </p>
+        <h1>{name}</h1>
+        <p>{bio}</p>
         <ContainerGithubInfos>
           <div>
             <FontAwesomeIcon icon={faGithub} style={{ color: "#3A536B" }} />
-            <span>brunomeirel3s</span>
+            <span>{login}</span>
           </div>
           <div>
             <FontAwesomeIcon icon={faBuilding} style={{ color: "#3A536B" }} />
-            <span>Unimed Belém</span>
+            <span>{company}</span>
           </div>
           <div>
             <FontAwesomeIcon icon={faUserGroup} style={{ color: "#3A536B" }} />
-            <span>2 seguidores</span>
+            <span>{followers} seguidores</span>
           </div>
         </ContainerGithubInfos>
       </ContainerUserInfos>
       <GithubLink>
-        <a href="https://github.com/brunomeirel3s" target="_blank">
+        <a href={html_url} target="_blank">
           <span>GITHUB</span>
           <FontAwesomeIcon
             icon={faArrowUpRightFromSquare}

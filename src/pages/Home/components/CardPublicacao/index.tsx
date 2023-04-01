@@ -1,21 +1,39 @@
 import { ContainerCardPublicacao, Content, Header } from "./styles";
+import { parseISO, formatDistance } from "date-fns";
+import ptBr from "date-fns/locale/pt-BR";
 
-export function CardPublicacao() {
+interface CardPublicacaoProps {
+  id: string;
+  title: string;
+  date: string;
+  body: string;
+  number: number;
+}
+
+export function CardPublicacao({
+  title,
+  id,
+  date,
+  body,
+  number,
+}: CardPublicacaoProps) {
+  const firstDate = parseISO(date);
+  const distance = formatDistance(firstDate, new Date(), {
+    locale: ptBr,
+  });
   return (
     <ContainerCardPublicacao>
-      <a href="/post">
+      <a href={`/post/${number}`}>
         <Header>
           <div>
-            <h3>Javascrip data types and data structures</h3>
+            <h3>{title}</h3>
           </div>
-          <span>Há 1 dia</span>
+          <span>Há {distance}</span>
         </Header>
         <Content>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit
-            quaerat esse atque illo incidunt asperiores ut eius nemo dolorum
-            tempora odio, sit reiciendis expedita nulla quia iure sequi vitae.
-            Dolores?
+            {body?.substring(0, 255)}
+            {"..."}
           </p>
         </Content>
       </a>
